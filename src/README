@@ -1,0 +1,6 @@
+Bu dosyayı anlayabilmek için test/java altındaki features ları incelemeniz gerekmektedir.
+Features içerisindeki her bir adım bir kod bloğunu temsil eder. Her adım için bir kod parçası çalışır.
+
+Bu kod blokları main/java/StepDefinations altına kayıtlıdır.
+
+Driver ı aktif eden klasör main/java/Utility altında BaseDriver içerisinde yer alır.
