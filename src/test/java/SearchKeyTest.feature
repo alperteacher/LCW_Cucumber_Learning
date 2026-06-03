@@ -10,6 +10,6 @@
 
       Scenario: User search keys, these keys must be in the product page
         Given User navigate to main page
-        When Enter "Kolsuz Tişört" in search input
+        When Enter "Kolsuz Tişört" in search input and press enter
         And Click to a product in search page and navigate to product page
         Then User be able to see "Kolsuz" and "Tişört" in the product description
