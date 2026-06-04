@@ -16,7 +16,13 @@ public class Navbar extends HelperFunctions {
     @FindBy(id = "search-form__input-field__search-input")
     public WebElement searchInput;
 
-    @FindBy(css = ".advanced-search")
-    public WebElement suggestionBox;
+    @FindBy(xpath = "//div[text()=\"Trend Aramalar\"]")
+    public WebElement trendAramalarText;
+
+    @FindBy(xpath = "//div[text()=\"Önerilen Aramalar\"]")
+    public WebElement onerilenAramalarText;
+
+    @FindBy(className = "search-bar-close-icon")
+    public WebElement inputCloseButton;
 
 }

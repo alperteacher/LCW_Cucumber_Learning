@@ -15,4 +15,7 @@ public class MainPage extends HelperFunctions {
     // Element bulma
     @FindBy(id = "cookieseal-banner-accept")
     public WebElement cookiesAcceptButton;
+
+    @FindBy(className = "ins-web-opt-in-reminder-close-button")
+    public WebElement closeNotificationButton;
 }

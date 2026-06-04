@@ -1,0 +1,55 @@
+
+
+1- Seneryo : Searched Words In Products
+Arama çubuğuna spesifik bir kelime ("hırka") yazıp Enter'a basıldığında çıkan ürünlerin en az 10 tanesinin isim veya kategorisinde bu kelimenin geçtiğinin doğrulanması.
+
+-------------------------------------------------------------------
+
+2- Seneryo : Checkbox Clear Function
+Arama çubuğuna metin yazıldıktan sonra yanda beliren temizle (çarpı/x) ikonuna tıklanarak input alanının boşaltılması.
+
+-------------------------------------------------------------------
+
+3- Seneryo : Brand Search Check
+LCW bünyesinde satılan spesifik bir marka adı ("PUMA" vb.) aratıldığında o markanın sayfasına veya marka filtrelenmiş ürün listesine gidilmesi, ilk 10 ürün markasını doğrulama.
+
+-------------------------------------------------------------------
+
+4- Seneryo : Searched URL Check
+Arama sonuç sayfasında URL'nin girilen anahtar kelimeyi (ör. ?q=hırka) doğru taşıdığının test edilmesi.
+
+-------------------------------------------------------------------
+
+5- Seneryo : Search Button Check
+Klavye "Enter" tuşu haricinde büyüteç ikonuna tıklandığında da arama işleminin başarıyla başlaması.
+
+
+-------------------------------------------------------------------
+
+6- # Arama menüsü 404 case :
+    # Seneryo
+    # Geçerli bir karakter dizisi "pantolon" diye arandığında arama sayfasında "pantolon" İÇİN SONUÇLAR" başlığının çıkması
+    # Negatif Seneryo
+    # Alakasız veya geçersiz bir karakter dizisi ("asdfgh123") aratıldığında, sistemin "Böyle bir ürün bulunamadı"
+    # sayfasına yönlendirmesi.
+
+-------------------------------------------------------------------
+
+7- # Arama menüsü autocomplete case :
+   # Senaryo 1
+   # Arama çubuğuna 3 karakterden daha az (ör. "ko") değer girildiğinde otomatik tamamlama (autocomplete) menüsünün açılmaması.
+   # Negatif Senaryo 2
+   # Arama çubuğuna 3 karakterden daha fazla (ör. "kot") değer girildiğinde otomatik tamamlama (autocomplete) menüsünün açılması.
+
+-------------------------------------------------------------------
+
+8- # 1- User anasayfaya gider
+     # 2- Arama inputuna kolsuz gömlek yazar
+     # 3- İlk ürüne tıklar
+     # 4- Açıklamada kolsuz ve gömlek kelimelerinin geçtiği onaylanır
+     # https://www.lcwaikiki.com/
+
+--------------------------------------------------------------------
+
+9- Seneryo : Validate search lenght
+Arama sonucunda sayfanın üstünde yazan "X adet ürün bulundu" metni ile grid içindeki (veyahut sayfa başı) ürün sayısının uyumlu olması.
