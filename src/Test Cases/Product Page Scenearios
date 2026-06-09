@@ -1,0 +1,19 @@
+1- SP'den tıklanan bir ürünün PDP'sinde ürün görseli, marka, başlık ve fiyat bilgilerinin DOM'da eksiksiz yüklenmesi.
+
+2- Beden seçimi yapılmadan "Sepete Ekle" butonuna tıklandığında "Lütfen beden seçiniz" veya benzeri bir hata mesajının alınması.
+
+3- Stokta mevcut olan bir beden kutucuğuna tıklandığında, kutunun seçili state'e (etrafında border vb.) geçmesi.
+
+4- "Tükendi" veya pasif durumdaki bir beden seçeneğine tıklandığında sepete ekle butonunun değişmesi.
+
+5- Renk seçenekleri (Swatches) arasında geçiş yapıldığında, hem görsellerin değişmesi hem de beden stoklarının yeni renge göre güncellenmesi.
+
+6- "Değerlendirmeler" sekmesine tıklandığında ürüne yapılan yorumların görüntülenmesi (veya hiç yoksa "İlk sen değerlendir" mesajı).
+
+7- Ürüne ait bir beden seçilip "Sepete Ekle" dendiğinde, sağ üstteki sepet ikonunun üzerindeki ürün adedi sayacının (+1) artması.
+
+8- Başarılı sepete ekleme sonucunda "Sepetinize eklendi" bilgisini veren anlık mesajın (toast) görünür olması.
+
+9- "Mağazada Stok Durumu" özelliğine tıklandığında ve beden seçildikten sonra, il/ilçe seçilerek fiziksel mağaza stok durumunun sorgulanabilmesi.
+
+10- Sayfanın alt kısmındaki "İlgini Çekebilecek Diğer Ürünler" slider'ının görünür ve içindeki kartların tıklanabilir olması.
