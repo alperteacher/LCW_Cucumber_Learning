@@ -18,8 +18,11 @@ public class MainPageSteps {
     @Given("User navigate to website")
     public void userNavigateToWebsite() {
         GWD.getDriver().get("https://www.lcwaikiki.com");
-        mp.clickElement(mp.cookiesAcceptButton);
-        mp.clickElement(mp.closeNotificationButton);
+
+        try{
+            mp.cookiesAcceptButton.click();
+            mp.closeNotificationButton.click();
+        } catch (Exception e){}
     }
 }
 
