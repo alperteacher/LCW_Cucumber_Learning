@@ -25,4 +25,7 @@ public class Navbar extends HelperFunctions {
     @FindBy(className = "search-bar-close-icon")
     public WebElement inputCloseButton;
 
+    @FindBy(className = "search-form__input-field__btn-search")
+    public WebElement searchButton;
+
 }

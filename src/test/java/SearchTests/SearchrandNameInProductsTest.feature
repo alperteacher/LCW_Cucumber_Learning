@@ -12,10 +12,10 @@
         Given User navigate to website
 
       Scenario Outline: Validate the searched keys in product names
-        When Enter "<productName>" in search input and search
-        And User must see the search page with "<productName>" header
-        Then User must see "<productName>" in products 10 at least
+        When Enter "<brandName>" in search input and search
+        And User must see the search page with "<brandName>" header
+        Then User must see "<brandName>" in products brands 10 at least
 
         Examples:
-          |productName|
-          |hırka|
+          |brandName|
+          |Puma|

@@ -26,4 +26,10 @@ public class SearchPage extends HelperFunctions {
 
     @FindBy(css = ".product-description.product-card-info__description")
     public List<WebElement> productNames;
+
+    @FindBy(className = "product-brand")
+    public List<WebElement> brandingNames;
+
+    @FindBy(className = "load-more__info-text-viewed-products")
+    public WebElement productCountInfo;
 }
