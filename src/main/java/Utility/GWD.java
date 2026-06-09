@@ -36,13 +36,26 @@ public class GWD {
         // süresini optimize eder
         if(wait == null && js == null){
             threads.get().manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
-            threads.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(7));
+            threads.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
             wait = new WebDriverWait(threads.get(), Duration.ofSeconds(20));
             js = (JavascriptExecutor) threads.get();
         }
 
         // Yeni aktif driver ı return et.
         return threads.get();
+    }
+
+    public static void quitDriver() {
+        if (threads.get() != null) {
+
+            threads.get().quit();
+
+            WebDriver driver = threads.get();
+
+            driver = null;
+
+            threads.set(driver);
+        }
     }
 
 

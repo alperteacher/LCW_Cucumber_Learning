@@ -1,6 +1,5 @@
-package StepDefinations;
+package StepDefinitions;
 
-import Utility.GWD;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 
@@ -15,4 +14,5 @@ public class Hooks {
     public void after(){
         System.out.println("Test tamamlandı.");
     }
+
 }

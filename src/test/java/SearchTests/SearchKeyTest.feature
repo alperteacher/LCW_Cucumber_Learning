@@ -8,11 +8,12 @@
 
     Feature: Search Key Test
 
+      @Regression
       Scenario Outline: User search keys, these keys must be in the product page
-        Given User navigate to main page
+        Given User navigate to website
         When Enter "<productName>" in search input and search
         And Click to a product in search page and navigate to product page
-        Then User be able to see "Kolsuz" and "Tişört" in the product description
+        Then User be able to see "<productName>" in the product description
         Examples:
           |productName|
-          |Kolsuz Tişört|
+          |Polo Yaka|

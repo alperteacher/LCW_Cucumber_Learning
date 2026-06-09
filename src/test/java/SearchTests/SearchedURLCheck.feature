@@ -3,6 +3,7 @@
 
   Feature: Searched URL Check
 
+    @Regression
     Scenario: Find the text in url after search
       When User navigate to website
       And Enter words in search input and search

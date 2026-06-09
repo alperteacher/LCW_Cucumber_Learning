@@ -11,6 +11,7 @@
       Background:
         Given User navigate to website
 
+      @Regression
       Scenario Outline: Validate the searched keys in product names
         When Enter "<productName>" in search input and search
         And User must see the search page with "<productName>" header
