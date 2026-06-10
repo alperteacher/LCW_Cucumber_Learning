@@ -3,7 +3,6 @@
 
     <Properties>
         <Property name="LOG_PATTERN">%d{yyyy-MM-dd HH:mm:ss} [%t] %-5level %logger{36} - %msg%n</Property>
-        <Property name="LOG_FILE">src/test/Logs/Automaiton_logs_$(date:yyyy-MM-dd-HH-mm-ss).log</Property>
     </Properties>
 
     <Appenders>
@@ -13,7 +12,7 @@
         </Console>
 
         <!-- Dosyaya yazan appender -->
-        <File name="File" fileName="${LOG_FILE}">
+        <File name="File" fileName="${sys:logFileName}">
             <PatternLayout pattern="${LOG_PATTERN}"/>
         </File>
     </Appenders>

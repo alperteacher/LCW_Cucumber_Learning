@@ -1,8 +1,8 @@
 package StepDefinitions;
 
-import PAGES.Navbar;
-import PAGES.SearchPage;
-import Utility.GWD;
+import pages.Navbar;
+import pages.SearchPage;
+import utility.GWD;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
@@ -27,30 +27,30 @@ public class SearchSteps extends GWD {
 
     @Then("Click to a product in search page and navigate to product page")
     public void aa() {
-        sp.clickElement(sp.firstItem);
+        sp.clickElement(sp.FIRST_ITEM);
         logger.info("İlk ürüne tıklandı");
     }
 
     @When("Enter {string} in search input")
     public void enterInSearchInput(String arg0) {
-        nb.clickElement(nb.searchInput);
+        nb.clickElement(nb.SEARCH_INPUT);
         logger.info("Search input a tıklandı.");
-        nb.sendKeys(nb.searchInput, arg0);
+        nb.sendKeys(nb.SEARCH_INPUT, arg0);
         logger.info("Search input kelime gönderildi");
     }
 
     @When("Enter {string} in search input and search")
     public void enterInSearchInputAndSearch(String arg0) {
-        nb.clickElement(nb.searchInput);
+        nb.clickElement(nb.SEARCH_INPUT);
         logger.info("Search input a tıklandı.");
-        nb.sendKeys(nb.searchInput, arg0, Keys.ENTER);
+        nb.sendKeys(nb.SEARCH_INPUT, arg0, Keys.ENTER);
         logger.info("Search input kelime gönderildi ve enter a basıldı");
     }
 
     @And("User must see the search page with {string} header")
     public void userMustSeeTheSearchPageWithHeader(String arg0) {
         try {
-            Assert.assertTrue(sp.header.getText().contains(arg0));
+            Assert.assertTrue(sp.HEADER.getText().contains(arg0));
             logger.info("Header da text kontrolü başarılı.");
         } catch (AssertionError e){
             logger.warn(e.getMessage());
@@ -62,7 +62,7 @@ public class SearchSteps extends GWD {
     @Then("User must see the no found page with {string}")
     public void userMustSeeTheNoFoundPageWith(String arg0) {
         try {
-            Assert.assertTrue(sp.notFoundText.getText().contains(arg0));
+            Assert.assertTrue(sp.NOT_FOUND_TEXT.getText().contains(arg0));
             logger.info("Bulunamadı doğrulaması gerçekleşti.");
         } catch (AssertionError e){
             logger.warn(e.getMessage());
@@ -74,7 +74,7 @@ public class SearchSteps extends GWD {
     public void userMustSeeInProductsAtLeast(String arg0) {
         logger.info("Ürün isimleri alınıyor.");
         int i = 0;
-        for (WebElement element : sp.productNames){
+        for (WebElement element : sp.PRODUCT_NAMES){
             if (element.getText().toLowerCase().contains(arg0)){
                 i++;
             }
@@ -92,7 +92,7 @@ public class SearchSteps extends GWD {
     @Then("User shouldn't see the autocomplete box")
     public void userShouldnTSeeTheAutocompleteBox() {
         logger.info("Trend aramalar kontrolü.");
-        if (!nb.trendAramalarText.isDisplayed()) {
+        if (!nb.TRENT_ARAMALAR_TEXT.isDisplayed()) {
             Assert.fail();
         }
         logger.info("Trend aramalar gözükmüyor.");
@@ -101,7 +101,7 @@ public class SearchSteps extends GWD {
     @And("User should see the autocomplete box")
     public void userShouldSeeTheAutocompleteBox() {
         logger.info("Önerilen aramalar kontrolü.");
-        if (!nb.onerilenAramalarText.isDisplayed()) {
+        if (!nb.ONERILEN_ARAMALAR_TEXT.isDisplayed()) {
             Assert.fail();
         }
 
@@ -110,7 +110,7 @@ public class SearchSteps extends GWD {
 
     @And("Click to close button in input")
     public void clickToCloseButtonInInput() {
-        nb.clickElement(nb.inputCloseButton);
+        nb.clickElement(nb.INPUT_CLOSE_BUTTON);
         logger.info("Kapatma butonuna tıklanıldı.");
     }
 
@@ -118,7 +118,7 @@ public class SearchSteps extends GWD {
     public void inputsAreaMustBeClear() {
         logger.info("Input temizleme kontrolü.");
         try {
-            Assert.assertTrue(nb.searchInput.getAttribute("value").isEmpty());
+            Assert.assertTrue(nb.SEARCH_INPUT.getAttribute("value").isEmpty());
             logger.info("Input temizlendiği kontrol edildi.");
         } catch (AssertionError e){
             logger.warn(e.getMessage());
@@ -130,7 +130,7 @@ public class SearchSteps extends GWD {
     public void userMustSeeInProductsBrandsAtLeast(String arg0) {
         logger.info("Marka isimleri alınıyor.");
         int i = 0;
-        for (WebElement element : sp.brandingNames){
+        for (WebElement element : sp.BRADING_NAMES){
             if (element.getText().toLowerCase().contains(arg0.toLowerCase())){
                 i++;
             }
@@ -152,9 +152,9 @@ public class SearchSteps extends GWD {
         String word1 = data.get(0).get("word1");
         String word2 = data.get(0).get("word2");
         String completeString = word1 + " " + word2;
-        nb.clickElement(nb.searchInput);
+        nb.clickElement(nb.SEARCH_INPUT);
         logger.info("Search input a tıklanıldı.");
-        nb.sendKeys(nb.searchInput, completeString, Keys.ENTER);
+        nb.sendKeys(nb.SEARCH_INPUT, completeString, Keys.ENTER);
         logger.info("Serach input a verilen kelimeler girildi. ("+ word1 + " - " + word2 +")");
     }
 
@@ -181,7 +181,7 @@ public class SearchSteps extends GWD {
 
     @And("Click to search button")
     public void clickToSearchButton() {
-        nb.clickElement(nb.searchButton);
+        nb.clickElement(nb.SEARCH_BUTTON);
         logger.info("Arama butonuna tıklanıldı.");
     }
 
@@ -190,7 +190,7 @@ public class SearchSteps extends GWD {
         logger.info("Sayfadaki ürün sayısı alınıyor.");
 
         try {
-            Assert.assertTrue(sp.productNames.size() == Integer.parseInt(sp.productCountInfo.getText()));
+            Assert.assertTrue(sp.PRODUCT_NAMES.size() == Integer.parseInt(sp.PRODUCT_COUNT_INFO.getText()));
             logger.info("Sayfadaki ürün sayısı doğrulandı.");
         } catch (AssertionError e){
             logger.warn(e.getMessage());

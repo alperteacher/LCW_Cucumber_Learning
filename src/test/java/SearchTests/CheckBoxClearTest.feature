@@ -15,3 +15,4 @@
         Examples:
           |keys|
           |abcdef|
+          |ajısrj|

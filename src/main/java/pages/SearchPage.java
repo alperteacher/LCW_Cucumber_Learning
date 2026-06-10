@@ -1,6 +1,6 @@
-package PAGES;
+package pages;
 
-import Utility.GWD;
+import utility.GWD;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -16,20 +16,20 @@ public class SearchPage extends HelperFunctions {
 
     // Element bulma
     @FindBy(css = "[data-product-order=\"0\"]")
-    public WebElement firstItem;
+    public WebElement FIRST_ITEM;
 
     @FindBy(css = "h1.product-list-heading__title")
-    public WebElement header;
+    public WebElement HEADER;
 
     @FindBy(css = ".not-found-keyword__text")
-    public WebElement notFoundText;
+    public WebElement NOT_FOUND_TEXT;
 
     @FindBy(css = ".product-description.product-card-info__description")
-    public List<WebElement> productNames;
+    public List<WebElement> PRODUCT_NAMES;
 
     @FindBy(className = "product-brand")
-    public List<WebElement> brandingNames;
+    public List<WebElement> BRADING_NAMES;
 
     @FindBy(className = "load-more__info-text-viewed-products")
-    public WebElement productCountInfo;
+    public WebElement PRODUCT_COUNT_INFO;
 }

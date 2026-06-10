@@ -1,6 +1,6 @@
-package PAGES;
+package pages;
 
-import Utility.GWD;
+import utility.GWD;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -14,18 +14,18 @@ public class Navbar extends HelperFunctions {
 
     // Element bulma
     @FindBy(id = "search-form__input-field__search-input")
-    public WebElement searchInput;
+    public WebElement SEARCH_INPUT;
 
     @FindBy(xpath = "//div[text()=\"Trend Aramalar\"]")
-    public WebElement trendAramalarText;
+    public WebElement TRENT_ARAMALAR_TEXT;
 
     @FindBy(xpath = "//div[text()=\"Önerilen Aramalar\"]")
-    public WebElement onerilenAramalarText;
+    public WebElement ONERILEN_ARAMALAR_TEXT;
 
     @FindBy(className = "search-bar-close-icon")
-    public WebElement inputCloseButton;
+    public WebElement INPUT_CLOSE_BUTTON;
 
     @FindBy(className = "search-form__input-field__btn-search")
-    public WebElement searchButton;
+    public WebElement SEARCH_BUTTON;
 
 }

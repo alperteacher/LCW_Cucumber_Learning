@@ -1,25 +1,29 @@
 package StepDefinitions;
 
-import PAGES.ProductPage;
-import Utility.GWD;
+import io.cucumber.java.PendingException;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 
-
+import pages.ProductPage;
+import utility.GWD;
 
 // Ürün sayfası adımları burada tanımlanır
 public class ProductPageSteps extends GWD {
 
-    ProductPage pp = new ProductPage();
     private static final Logger logger = LogManager.getLogger(MainPageSteps.class);
+    ProductPage pp = new ProductPage();
 
     @Then("User be able to see {string} in the product description")
     public void aa(String arg0) {
-        pp.clickElement(pp.mainDescriptionButton);
+        pp.clickElement(pp.MAIN_DESCRIPTION_BUTTON);
         logger.info("Kullanıcı ürün açıklaması butonuna tıkladı.");
-        String description = pp.productDetailsMiddle.getText().toLowerCase();
+
+        String description = pp.PRODUCT_DETAILS_MIDDLE.getText().toLowerCase();
         logger.info("Ürün açıklaması alındı:" + description);
 
         String firstKey = arg0.substring(0, arg0.indexOf(" ")).toLowerCase();
@@ -30,6 +34,25 @@ public class ProductPageSteps extends GWD {
         logger.info("Ürün isimleri açıklama içerisinde yer alıyor.");
     }
 
+    @When("User click to add to cart button")
+    public void userClickToAddToCartButton() {
+        pp.clickElement(pp.ADD_TO_CART_BUTTON);
+        logger.info("Sepete ekle butonuna tıklandı.");
+    }
+
+    @Then("User able to see \"select a variation\" message")
+    public void userAbleToSeeMessage() {
+        logger.info("Buton değişimi kontrol ediliyor.");
+        System.out.println(pp.ADD_TO_CART_BUTTON.getCssValue("background-color"));
+        try {
+            wait.until(ExpectedConditions.attributeToBe(pp.ADD_TO_CART_BUTTON,"background-color","rgba(235, 80, 59, 1)"));
+            Assert.assertTrue(pp.ADD_TO_CART_BUTTON.getCssValue("background-color").equals("rgba(235, 80, 59,1 )"));
+            logger.info("Buton değişimi onaylandı.");
+        } catch (Exception e) {
+            logger.info("Buton değişimi onaylanmadı.");
+            throw e;
+        }
+    }
 }
 
 
