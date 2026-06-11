@@ -1,5 +1,6 @@
 package runner;
 
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import utility.GWD;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
@@ -13,11 +14,10 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 @CucumberOptions(
-        features = "classpath:features",
+        features = "src/test/resources/features/SearchTests/SearchKeysInProductsTest.feature",
         glue = "StepDefinitions"
 )
-public class RunAll extends AbstractTestNGCucumberTests {
-
+public class RunSingle extends AbstractTestNGCucumberTests {
     public static void main(String[] args) throws Throwable {
         Logger.getLogger("").setLevel(Level.SEVERE);
 
@@ -25,18 +25,7 @@ public class RunAll extends AbstractTestNGCucumberTests {
         System.setProperty("logFileName","src/test/Logs/Automation-Logs-" + timestamp + ".log");
 
         String[] argv = {"--glue", "StepDefinitions",
-                "classpath:features"};
+                "src/test/resources/features/SearchTests/SearchKeysInProductsTest.feature"};
         io.cucumber.core.cli.Main.run(argv, Thread.currentThread().getContextClassLoader());
     }
-
-    @BeforeClass
-    public void beforeClass(){}
-
-    @AfterClass
-    public void afterClass(){
-        GWD.quitDriver();
-    }
-
-    @BeforeSuite
-    public void beforeSuite(){}
 }

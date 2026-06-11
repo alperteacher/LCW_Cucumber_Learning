@@ -5,6 +5,8 @@ import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.testng.annotations.AfterSuite;
+import utility.GWD;
 
 public class Hooks {
 
@@ -28,5 +30,10 @@ public class Hooks {
     public void after(Scenario scenario){
         logger.trace(scenario.getName() + " tamamlandı.");
         logger.trace("------------------------*--------------------------");
+    }
+
+    @AfterSuite
+    public void afterSuite(){
+        GWD.quitDriver();
     }
 }
