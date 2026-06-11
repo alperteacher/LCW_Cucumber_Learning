@@ -12,7 +12,7 @@ public class Hooks {
 
     @Before
     public void before(Scenario scenario){
-        String featureFileName = scenario.getUri().getPath();
+        String featureFileName = scenario.getUri().toString();
         featureFileName = featureFileName.substring(featureFileName.lastIndexOf("/") + 1).replace(".feature", "");
 
         logger.trace("------------------------*--------------------------");

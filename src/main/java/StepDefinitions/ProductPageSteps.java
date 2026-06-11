@@ -43,10 +43,8 @@ public class ProductPageSteps extends GWD {
     @Then("User able to see \"select a variation\" message")
     public void userAbleToSeeMessage() {
         logger.info("Buton değişimi kontrol ediliyor.");
-        System.out.println(pp.ADD_TO_CART_BUTTON.getCssValue("background-color"));
         try {
-            wait.until(ExpectedConditions.attributeToBe(pp.ADD_TO_CART_BUTTON,"background-color","rgba(235, 80, 59, 1)"));
-            Assert.assertTrue(pp.ADD_TO_CART_BUTTON.getCssValue("background-color").equals("rgba(235, 80, 59,1 )"));
+            Assert.assertTrue(pp.ADD_TO_CART_BUTTON.getAttribute("class").contains("add-to-card--select-size"));
             logger.info("Buton değişimi onaylandı.");
         } catch (Exception e) {
             logger.info("Buton değişimi onaylanmadı.");

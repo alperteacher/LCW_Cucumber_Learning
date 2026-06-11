@@ -13,5 +13,5 @@
 
       Examples:
         | productCategories |
-        | tişört            |
+        | erkek tişört      |
 
