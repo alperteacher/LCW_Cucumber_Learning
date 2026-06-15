@@ -1,0 +1,18 @@
+1- Giriş yapılmadan sepette "Siparişi Tamamla" dendiğinde sistemin Giriş Yap / Üye Ol sayfasına yönlendirmesi
+(veya misafir checkout ekranına geçmesi).
+
+2- Adres adımında, "Yeni Teslimat Adresi Ekle" butonuna basılıp İl, İlçe, Mahalle ve Adres girilerek adres kaydedilmesi.
+
+3- Fatura adresinin teslimat adresi ile aynı/farklı yapılması sağlayan checkbox'ın doğru çalışması.
+
+4- Kredi / Banka Kartı formunda Kart Numarası input alanının sadece rakam kabul edip, harf yazıldığında kabul etmemesi.
+
+5- Kredi Kartı numarası eksik veya yanlış bir pattern'de (ör. Master Card formatı dışında) girildiğinde validasyon
+hatası vermesi.
+
+6- Son Kullanma Tarihi (SKT) alanına bugünün tarihinden eski bir yıl/ay girildiğinde sistemin kartı kabul etmemesi.
+
+7- Güvenlik kodu (CVV) alanına 3 haneli bir sayı yazılması zorunluluğunun test edilmesi.
+
+8- "Ön Bilgilendirme Formu ve Mesafeli Satış Sözleşmesini okudum" onay kutusu (checkbox) işaretlenmeden
+ "Siparişi Onayla/Ödeme Yap" butonunun hata vermesi.

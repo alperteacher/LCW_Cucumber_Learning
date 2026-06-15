@@ -1,21 +1,17 @@
 package runner;
 
-import org.testng.annotations.BeforeSuite;
 import utility.GWD;
-import io.cucumber.testng.AbstractTestNGCucumberTests;
-import io.cucumber.testng.CucumberOptions;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-@CucumberOptions(
-        features = "classpath:features",
-        glue = "StepDefinitions"
-)
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import io.cucumber.testng.AbstractTestNGCucumberTests;
+
 public class RunAll extends AbstractTestNGCucumberTests {
 
     public static void main(String[] args) throws Throwable {
@@ -24,9 +20,11 @@ public class RunAll extends AbstractTestNGCucumberTests {
         String timestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd_HH-mm-ss"));
         System.setProperty("logFileName","src/test/Logs/Automation-Logs-" + timestamp + ".log");
 
-        String[] argv = {"--glue", "StepDefinitions",
-                "classpath:features"};
-        io.cucumber.core.cli.Main.run(argv, Thread.currentThread().getContextClassLoader());
+        String[] cucumberOptions = {
+                "classpath:features",
+                "--glue", "StepDefinitions"
+        };
+        io.cucumber.core.cli.Main.run(cucumberOptions, Thread.currentThread().getContextClassLoader());
     }
 
     @BeforeClass

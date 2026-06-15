@@ -1,0 +1,13 @@
+1- Sepette görünen ürün adı, seçilen renk, beden ve birim fiyatın ürün detay sayfasındakiyle tamamen eşleşmesi.
+
+2- Sepetteki ürün adet sayısını artıran (+) butonuna tıklandığında ürün birim fiyatı ile adedin doğru çarpılıp
+satır tutarının güncellenmesi.
+
+3- Ürün adet sayısını düşüren (-) butonuna tıklandığında fiyatın güncellenmesi; adet 1 iken bu butona basıldığında
+ürünün sepetten silinmesi veya butonun pasifleşmesi.
+
+4- Sepetteki ürün satırının yanındaki "Sil" butonuna tıklanarak, ürünün sepetten başarılı şekilde çıkarılması.
+
+5- Sepet tamamen boşaltıldığında sayfanın "Sepetinizde ürün bulunmamaktadır" tasarımına dönmesi.
+
+6- Sayfada "Siparişi Tamamla" (veya Ödemeye Geç) butonuna tıklandığında ödeme akışına (Checkout) yönlendirilmesi.

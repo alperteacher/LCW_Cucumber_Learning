@@ -1,6 +1,10 @@
 package utility;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
+import java.io.FileReader;
+import java.io.IOException;
+import java.time.Duration;
+import java.util.Properties;
+
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -8,11 +12,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.io.FileReader;
-import java.io.IOException;
-import java.time.Duration;
-import java.util.Properties;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 // General Web Driver - İçerisinde driver nesnelerini barındırır ve dağıtır.
 public class GWD {
@@ -22,7 +22,6 @@ public class GWD {
     private static ThreadLocal<WebDriver> threads = new ThreadLocal<>();
     public static WebDriverWait wait;
     public static JavascriptExecutor js;
-
 
     // ThreadLocal içerisinde aktif driver varsa return eden, yok ise oluşturan getter method
     public static WebDriver getDriver(){

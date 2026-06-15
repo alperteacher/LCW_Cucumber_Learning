@@ -1,16 +1,13 @@
 package StepDefinitions;
 
-import io.cucumber.java.PendingException;
+import pages.ProductPage;
+import utility.GWD;
+
+import org.testng.Assert;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.testng.Assert;
-
-import pages.ProductPage;
-import utility.GWD;
 
 // Ürün sayfası adımları burada tanımlanır
 public class ProductPageSteps extends GWD {

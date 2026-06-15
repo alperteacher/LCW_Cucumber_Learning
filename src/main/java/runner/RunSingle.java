@@ -13,10 +13,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-@CucumberOptions(
-        features = "src/test/resources/features/SearchTests/SearchKeysInProductsTest.feature",
-        glue = "StepDefinitions"
-)
+
 public class RunSingle extends AbstractTestNGCucumberTests {
     public static void main(String[] args) throws Throwable {
         Logger.getLogger("").setLevel(Level.SEVERE);
@@ -24,8 +21,10 @@ public class RunSingle extends AbstractTestNGCucumberTests {
         String timestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd_HH-mm-ss"));
         System.setProperty("logFileName","src/test/Logs/Automation-Logs-" + timestamp + ".log");
 
-        String[] argv = {"--glue", "StepDefinitions",
-                "src/test/resources/features/SearchTests/SearchKeysInProductsTest.feature"};
-        io.cucumber.core.cli.Main.run(argv, Thread.currentThread().getContextClassLoader());
+        String[] cucumberOptions = {
+                "src/test/resources/features/SearchTests/SearchKeysInProductsTest.feature",
+                "--glue", "StepDefinitions"
+        };
+        io.cucumber.core.cli.Main.run(cucumberOptions, Thread.currentThread().getContextClassLoader());
     }
 }

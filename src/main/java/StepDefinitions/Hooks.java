@@ -1,12 +1,13 @@
 package StepDefinitions;
 
+import utility.GWD;
+
+import org.testng.annotations.AfterSuite;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.testng.annotations.AfterSuite;
-import utility.GWD;
 
 public class Hooks {
 

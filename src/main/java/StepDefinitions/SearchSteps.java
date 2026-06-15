@@ -3,20 +3,20 @@ package StepDefinitions;
 import pages.Navbar;
 import pages.SearchPage;
 import utility.GWD;
+
+import java.io.UnsupportedEncodingException;
+import java.util.List;
+import java.util.Map;
+
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
-import org.testng.Assert;
-
-import java.io.UnsupportedEncodingException;
-import java.util.List;
-import java.util.Map;
-
 
 // Arama sayfası adımları burada tanımlanır
 public class SearchSteps extends GWD {
