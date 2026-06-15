@@ -3,6 +3,7 @@
 
   Feature: Search Button Check
 
+    @navbar
     Scenario Outline:
       Given User navigate to website
       When Enter "<searchKey>" in search input

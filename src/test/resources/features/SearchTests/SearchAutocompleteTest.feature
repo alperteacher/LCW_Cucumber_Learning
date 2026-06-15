@@ -8,6 +8,7 @@
 
   Feature: Search input autocomplete test
 
+    @navbar
     Scenario Outline: Check the autocomplete box is not visible after send 2 keys
       Given User navigate to website
       When Enter "<keys>" in search input
@@ -16,7 +17,7 @@
         |keys|
         |ko|
 
-
+    @navbar
     Scenario Outline: Check the autocomplete box is visible after send 3 keys
       Given User navigate to main page
       When Enter "<keys>" in search input

@@ -7,6 +7,7 @@
       Background:
         Given User navigate to website
 
+      @navbar
       Scenario Outline: Validation of input clearing
         When Enter "<keys>" in search input
         And Click to close button in input

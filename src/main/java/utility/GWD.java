@@ -9,7 +9,10 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.io.FileReader;
+import java.io.IOException;
 import java.time.Duration;
+import java.util.Properties;
 
 // General Web Driver - İçerisinde driver nesnelerini barındırır ve dağıtır.
 public class GWD {
@@ -23,7 +26,17 @@ public class GWD {
 
     // ThreadLocal içerisinde aktif driver varsa return eden, yok ise oluşturan getter method
     public static WebDriver getDriver(){
-        String browser = System.getProperty("browser", "chrome");
+        String browser;
+
+        try {
+            FileReader file = new FileReader("C:\\Users\\Alper\\IdeaProjects\\LCW_Cucumber_Learning\\src\\main\\java\\utility\\config.properties");
+            Properties properties = new Properties();
+            properties.load(file);
+            browser = properties.getProperty("defaultBrowser");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
         WebDriver driver;
 
         // Eğer ThreadLocal içerisinde aktif driver yok ise -
