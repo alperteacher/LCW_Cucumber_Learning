@@ -20,7 +20,7 @@ public class RegressionRun extends AbstractTestNGCucumberTests {
         System.setProperty("logFileName","src/test/Logs/Automation-Logs-" + timestamp + ".log");
 
         String[] cucumberOptions = {
-                "src/test/resources/features/ProductPageTests",
+                "src/test/resources/features",
                 "--glue", "StepDefinitions",
                 "--tags", "@Regression"
         };
