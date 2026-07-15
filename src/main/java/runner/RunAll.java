@@ -17,8 +17,7 @@ public class RunAll extends AbstractTestNGCucumberTests {
     public static void main(String[] args) throws Throwable {
         Logger.getLogger("").setLevel(Level.SEVERE);
 
-        String timestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd_HH-mm-ss"));
-        System.setProperty("logFileName","src/test/Logs/Automation-Logs-" + timestamp + ".log");
+        System.setProperty("logFileName","src/test/Logs/Automation-Logs.log");
 
         String[] cucumberOptions = {
                 "classpath:features",
@@ -27,14 +26,10 @@ public class RunAll extends AbstractTestNGCucumberTests {
         io.cucumber.core.cli.Main.run(cucumberOptions, Thread.currentThread().getContextClassLoader());
     }
 
-    @BeforeClass
-    public void beforeClass(){}
 
     @AfterClass
     public void afterClass(){
         GWD.quitDriver();
     }
 
-    @BeforeSuite
-    public void beforeSuite(){}
 }
